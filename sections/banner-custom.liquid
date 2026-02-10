@@ -1,122 +1,6 @@
-<section
-  class="banner-custom"
-  style="background-image: url({{ section.settings.background_image | image_url }});"
->
-  <!-- TOP HORIZONTAL CONTENT -->
-  <div class="banner-top">
-    <div class="banner-logo">
-      {{ section.settings.logo_text }}
-    </div>
-
-    <div class="banner-subtitle">
-      {{ section.settings.subtitle }}
-    </div>
-
-    <a href="#" class="banner-button">
-      {{ section.settings.button_text }} →
-    </a>
-  </div>
-
-  <!-- VERTICAL CONTENT -->
-  <div class="banner-content">
-    <h1 class="banner-heading">
-      {{ section.settings.heading }}
-    </h1>
-
-    <p class="banner-description">
-      {{ section.settings.description }}
-    </p>
-
-    <a href="#" class="banner-button banner-button-secondary">
-      {{ section.settings.button_text }} →
-    </a>
-  </div>
-</section>
-
-<style>
-  .banner-custom {
-    width: 100%;
-    height: calc(100vh - var(--header-height, 0px));
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* TOP BAR */
-  .banner-top {
-    display: flex;
-    align-items: center;
-    gap: 260px;
-
-    padding: 40px 50px;
-    color: #000000;
-  }
-
-  .banner-logo {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    white-space: nowrap;
-  }
-
-  .banner-subtitle {
-    font-size: 14px;
-    opacity: 0.9;
-    white-space: nowrap;
-  }
-
-  /* VERTICAL CONTENT */
-  .banner-content {
-    margin-top: 650px; /* adjust between 500–900px */
-    padding-left: 50px;
-    max-width: 600px;
-    color: #000000;
-  }
-
-  .banner-heading {
-    font-size: 62px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .banner-description {
-    font-size: 16px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
-
-  /* BUTTONS */
-  .banner-button {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid #000000;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .banner-button:hover {
-    background-color: #000000;
-    color: #ffffff;
-  }
-
-  .banner-button-secondary {
-    margin-top: 10px;
-  }
-</style>
-
-
 {% schema %}
 {
-  "name": "Banner Custom",
+  "name": "Custom Banner",
   "settings": [
     {
       "type": "image_picker",
@@ -126,42 +10,41 @@
     {
       "type": "text",
       "id": "logo_text",
-      "label": "Logo Text",
+      "label": "Logo text",
       "default": "TISSO VISION"
     },
     {
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Find ideal gift for your loved ones."
+      "default": "Find the ideal gift for your loved ones"
     },
     {
       "type": "text",
       "id": "heading",
-      "label": "Main heading",
+      "label": "Banner heading",
       "default": "The Gift Guide"
     },
     {
       "type": "textarea",
       "id": "description",
-      "label": "Description",
-      "default": "Discover meaningful gifts crafted with care."
+      "label": "Banner description",
+      "default": "Discover thoughtful gifts for everyone you love."
     },
     {
       "type": "text",
       "id": "button_text",
-      "label": "Button Text",
-      "default": "SHOP NOW"
-    },
+      "label": "Button text",
+      "default": "Choose Gift"
+    }
+  ],
+  "presets": [
     {
-      "type": "text",
-      "id": "bottom_text",
-      "label": "Bottom Text",
-      "default": "SUSTAINABLE, ETHICALLY MADE"
+      "name": "Custom Full Banner"
     }
   ]
 }
-{% endschema %} 
+{% endschema %}
 
 
 
