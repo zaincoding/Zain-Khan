@@ -80,12 +80,14 @@
       "banner-custom": {
         "type": "banner-custom",
         "settings": {
-          "background_image": "shopify://shop_images/TISSIO_VISION.png",
+          "background_image": "shopify://shop_images/TISSIO_VISION_1.png",
           "logo_text": "TISSIO VISION",
           "subtitle": "Find ideal gift for your loved ones.",
+          "choose_gift": "Choose Gift",
           "heading": "The Gift Guide.",
           "description": "Discover thoughtful gifts designed to celebrate every special moment. Carefully curated collections that blend style, quality, and meaning—perfect for surprising your loved ones and making memories that last",
-          "button_text": "SHOP NOW"
+          "button_text": "SHOP NOW",
+          "bottom_text": "SUSTAINABLE, ETHICALLY MADE"
         }
       },
       "grid-custom": {
