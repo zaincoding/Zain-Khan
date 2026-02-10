@@ -80,7 +80,8 @@
       "banner-custom": {
         "type": "banner-custom",
         "settings": {
-          "logo_text": "TISSO VISION",
+          "background_image": "shopify://shop_images/TISSIO_VISION.png",
+          "logo_text": "TISSIO VISION",
           "subtitle": "Find ideal gift for your loved ones.",
           "heading": "The Gift Guide.",
           "description": "Discover meaningful gifts crafted with care.",
