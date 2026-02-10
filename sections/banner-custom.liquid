@@ -70,7 +70,54 @@
 </style>
 
 
-
+{% schema %}
+{
+  "name": "Banner Custom",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "TISSO VISION"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover meaningful gifts crafted with care."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE"
+    }
+  ]
+}
+{% endschema %} 
 
 
 
