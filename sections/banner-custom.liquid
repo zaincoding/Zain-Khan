@@ -24,18 +24,21 @@
     position: relative;
   }
 
-  /* TOP HORIZONTAL BAR */
+  /* VERY TOP BAR */
   .banner-top {
     position: absolute;
-    top: 30px;
-    left: 40px;
-    right: 40px;
+    top: 0;
+    left: 0;
+    right: 0;
 
     display: flex;
     align-items: center;
-    gap: 200px; /* adjust to 250–300 if needed */
+    justify-content: flex-start;
 
-    color: #000;
+    padding: 20px 40px; /* inner spacing without pushing down */
+    gap: 400px; /* DOUBLE spacing */
+
+    color: #000000;
   }
 
   .banner-logo {
@@ -48,17 +51,17 @@
   .banner-subtitle {
     font-size: 14px;
     opacity: 0.9;
-    max-width: 300px;
+    white-space: nowrap;
   }
 
   .banner-button {
-    padding: 10px 22px;
+    padding: 10px 24px;
     background-color: #ffffff;
     color: #000000;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    border: 1px solid #000;
+    border: 1px solid #000000;
     transition: all 0.3s ease;
     white-space: nowrap;
   }
