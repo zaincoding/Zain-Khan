@@ -3,7 +3,9 @@
   style="background-image: url({{ section.settings.background_image | image_url }});"
 >
   <div class="banner-top">
-    <div class="banner-logo">{{ section.settings.logo_text }}</div>
+    <div class="banner-logo">
+      {{ section.settings.logo_text }}
+    </div>
 
     <div class="banner-subtitle">
       {{ section.settings.subtitle }}
@@ -18,26 +20,23 @@
 <style>
   .banner-custom {
     width: 100%;
-    min-height: 80vh;
+    height: 100vh; /* FULL SCREEN */
     background-size: cover;
     background-position: center;
-    position: relative;
-  }
-
-  /* VERY TOP BAR */
-  .banner-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    background-repeat: no-repeat;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
+  }
 
-    padding: 20px 40px; /* inner spacing without pushing down */
-    gap: 400px; /* DOUBLE spacing */
+  /* TOP CONTENT */
+  .banner-top {
+    display: flex;
+    align-items: center;
+    gap: 120px; /* REDUCED spacing */
 
+    padding: 30px 40px; /* slight top offset */
     color: #000000;
   }
 
@@ -55,7 +54,7 @@
   }
 
   .banner-button {
-    padding: 10px 24px;
+    padding: 10px 22px;
     background-color: #ffffff;
     color: #000000;
     font-size: 14px;
