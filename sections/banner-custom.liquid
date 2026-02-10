@@ -1,32 +1,19 @@
-
-<section 
-class="banner-custom"  style="background-image: url({{section.settings.background_image | image_url }});">
-
-
-<div class="banner-inner">
-
-<div> {{ section.settings.logo_text }} </div>
-
-<div> {{ section.settings.subtitle }}</div>
-
-<h1> {{ section.settings.heading }}</h1>
-
-<p> {{ section.settings.description }}</p>
-
-<a href="#">
-
-    {{ section.settings.button_text }}
-
-</a>
-
-<div> {{ section.settings.bottom_text }}</div>
-
-</div>
+<section
+  class="banner-custom"
+  style="background-image: url({{ section.settings.background_image | image_url }});"
+>
+  <div class="banner-inner">
+    <div class="banner-logo">{{ section.settings.logo_text }}</div>
+    <div class="banner-subtitle">{{ section.settings.subtitle }}</div>
+    <h1 class="banner-heading">{{ section.settings.heading }}</h1>
+    <p class="banner-description">{{ section.settings.description }}</p>
+    <a href="#" class="banner-button">{{ section.settings.button_text }}</a>
+    <div class="banner-bottom">{{ section.settings.bottom_text }}</div>
+  </div>
 </section>
 
 <style>
-
-  .banner-custom{
+  .banner-custom {
     width: 100%;
     min-height: 80vh;
     display: flex;
@@ -37,36 +24,36 @@ class="banner-custom"  style="background-image: url({{section.settings.backgroun
     background-position: center;
   }
 
-  .banner-inner{
+  .banner-inner {
     max-width: 900px;
     padding: 40px 20px;
     color: #ffffff;
   }
 
-  .banner-logo{
+  .banner-logo {
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 12px;
   }
 
-  .banner-subtitle{
+  .banner-subtitle {
     font-size: 14px;
     margin-bottom: 20px;
     opacity: 0.9;
   }
 
-  .banner-heading{
+  .banner-heading {
     font-size: 56px;
     font-weight: 700;
     margin-bottom: 20px;
   }
 
-  .banner-description{
+  .banner-description {
     font-size: 16px;
     margin-bottom: 32px;
   }
-  
-  .banner-button{
+
+  .banner-button {
     display: inline-block;
     padding: 14px 32px;
     background-color: #ffffff;
@@ -76,73 +63,63 @@ class="banner-custom"  style="background-image: url({{section.settings.backgroun
     transition: all 0.3s ease;
   }
 
-  .banner-button:hover{
+  .banner-button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
   }
 
-  .banner-bottom{
+  .banner-bottom {
     margin-top: 32px;
     font-size: 12px;
     letter-spacing: 2px;
   }
-
 </style>
 
-
-{%  schema %}
-
+{% schema %}
 {
- "name": "Banner Custom",
- "settings": [
-
+  "name": "Banner Custom",
+  "settings": [
     {
       "type": "image_picker",
       "id": "background_image",
       "label": "Background image"
     },
-    
     {
       "type": "text",
-       "id": "logo_text",
-       "label": "Logo Text",
-       "default": "TISSO VISION"
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "TISSO VISION"
     },
-
-        {
+    {
       "type": "text",
-       "id": "subtitle",
-       "label": "subtitle",
-       "default": "Find ideal gift for your loved ones."
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find ideal gift for your loved ones."
     },
-
-        {
+    {
       "type": "text",
-       "id": "heading",
-       "label": "Main heading",
-       "default": "The Gift Guide."
-    }, 
-
-        {
+      "id": "heading",
+      "label": "Main heading",
+      "default": "The Gift Guide"
+    },
+    {
       "type": "textarea",
-       "id": "description",
-       "label": "Description",
-       "default": "Discover meaningful gifts crafted with care."
+      "id": "description",
+      "label": "Description",
+      "default": "Discover meaningful gifts crafted with care."
     },
-
-        {
+    {
       "type": "text",
-       "id": "button_text",
-       "label": "Button Text",
-       "default": "SHOP NOW"
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
     },
-
     {
       "type": "text",
       "id": "bottom_text",
       "label": "Bottom Text",
-      "default":"SUSTAINABLE, EATHICALLY MADE"
+      "default": "SUSTAINABLE, ETHICALLY MADE"
     }
-]}
-
+  ]
+}
 {% endschema %}
