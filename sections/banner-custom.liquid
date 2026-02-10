@@ -2,6 +2,7 @@
   class="banner-custom"
   style="background-image: url({{ section.settings.background_image | image_url }});"
 >
+  <!-- TOP HORIZONTAL CONTENT -->
   <div class="banner-top">
     <div class="banner-logo">
       {{ section.settings.logo_text }}
@@ -15,30 +16,43 @@
       {{ section.settings.button_text }} →
     </a>
   </div>
+
+  <!-- VERTICAL CONTENT -->
+  <div class="banner-content">
+    <h1 class="banner-heading">
+      {{ section.settings.heading }}
+    </h1>
+
+    <p class="banner-description">
+      {{ section.settings.description }}
+    </p>
+
+    <a href="#" class="banner-button banner-button-secondary">
+      {{ section.settings.button_text }} →
+    </a>
+  </div>
 </section>
 
 <style>
   .banner-custom {
     width: 100%;
-
-    /* FIXED FULL HEIGHT ISSUE */
     height: calc(100vh - var(--header-height, 0px));
-
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
 
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
   }
 
+  /* TOP BAR */
   .banner-top {
     display: flex;
     align-items: center;
+    gap: 260px;
 
-    gap: 330px; /* INCREASED spacing */
-
-    padding: 10px 20px; /* top breathing space */
+    padding: 40px 50px;
     color: #000000;
   }
 
@@ -52,17 +66,39 @@
   .banner-subtitle {
     font-size: 14px;
     opacity: 0.9;
-    max-width: 300px;
     white-space: nowrap;
   }
 
+  /* VERTICAL CONTENT */
+  .banner-content {
+    margin-top: 650px; /* adjust between 500–900px */
+    padding-left: 50px;
+    max-width: 600px;
+    color: #000000;
+  }
+
+  .banner-heading {
+    font-size: 62px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .banner-description {
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  /* BUTTONS */
   .banner-button {
-    padding: 10px 50px;
-    background-color:rgb(248, 232, 13);
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #ffffff;
     color: #000000;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
+    border: 1px solid #000000;
     transition: all 0.3s ease;
     white-space: nowrap;
   }
@@ -70,6 +106,10 @@
   .banner-button:hover {
     background-color: #000000;
     color: #ffffff;
+  }
+
+  .banner-button-secondary {
+    margin-top: 10px;
   }
 </style>
 
