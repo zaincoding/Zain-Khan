@@ -1,4 +1,9 @@
-<div>
+
+<section 
+class="banner-custom"  style="background-image: url({{section.settings.background_image | image_url }});">
+
+
+<div class="banner-inner">
 
 <div> {{ section.settings.logo_text }} </div>
 
@@ -17,6 +22,72 @@
 <div> {{ section.settings.bottom_text }}</div>
 
 </div>
+</section>
+
+<style>
+
+  .banner-custom{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-inner{
+    max-width: 900px;
+    padding: 40px 20px;
+    color: #ffffff;
+  }
+
+  .banner-logo{
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .banner-subtitle{
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .banner-heading{
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .banner-description{
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .banner-button{
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .banner-button:hover{
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+
+  .banner-bottom{
+    margin-top: 32px;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+</style>
 
 
 {%  schema %}
@@ -24,6 +95,13 @@
 {
  "name": "Banner Custom",
  "settings": [
+
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    
     {
       "type": "text",
        "id": "logo_text",
