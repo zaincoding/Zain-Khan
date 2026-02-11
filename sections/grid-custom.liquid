@@ -246,6 +246,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         });
       }
+const popupImage = document.getElementById("popup-image");
+
+// Inject image
+popupImage.src = productData.featured_image
+  ? productData.featured_image
+  : ""; // fallback if no image
+popupImage.alt = productData.title;
 
       // Show popup
       popup.classList.remove("hidden");
