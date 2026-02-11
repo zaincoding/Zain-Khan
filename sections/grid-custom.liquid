@@ -31,21 +31,6 @@
   +
 </button>
 
-
-    {% comment %} <button 
-      type="button" 
-      class="plus-btn"
-      data-product='{{ product | json | escape }}'
-      data-product-id="{{ product.id }}"
-      style="
-    {% if block.settings.button_top != 0 %} top: {{ block.settings.button_top }}px; {% endif %}
-    {% if block.settings.button_bottom != 0 %} bottom: {{ block.settings.button_bottom }}px; {% endif %}
-    left: {{ block.settings.button_left }}px;
-    right: {{ block.settings.button_right }}px;
-    
-    ">
-      +
-    </button> {% endcomment %}
   </div>
 
 
@@ -69,6 +54,10 @@
   <div class="popup-content">
     <button id="close-popup" class="close-btn">×</button>
     <div class="popup-body">
+
+
+     <img id="popup-image" src="" alt="Product Image" width="600" height="400" 
+           style="width:100%; max-height:300px; object-fit:cover; margin-bottom:15px;">
 
             <h2 id="popup-title"></h2>
       <p id="popup-price"></p>
@@ -194,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const popup = document.getElementById("product-popup");
   const closeBtn = document.getElementById("close-popup");
 
+  const popupImage = document.getElementById("popup-image");
   const popupTitle = document.getElementById("popup-title");
   const popupPrice = document.getElementById("popup-price");
   const popupDescription = document.getElementById("popup-description");
@@ -203,6 +193,17 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener("click", function() {
 
       const productData = JSON.parse(this.dataset.product);
+
+
+
+       // Image
+    if (productData.featured_image) {
+      popupImage.src = productData.featured_image.src; // Shopify product JSON has featured_image.src
+      popupImage.alt = productData.title;
+    } else {
+      popupImage.src = ''; // fallback if no image
+      popupImage.alt = 'No image';
+    }
 
       // Title
       popupTitle.textContent = productData.title;
