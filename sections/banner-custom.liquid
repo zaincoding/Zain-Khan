@@ -1,7 +1,4 @@
-<section
-  class="banner-custom"
-  style="background-image: url({{ section.settings.background_image | image_url }});"
->
+<section class="banner-custom">
   <!-- TOP HORIZONTAL CONTENT -->
   <div class="banner-top">
     <div class="banner-logo">
@@ -41,6 +38,8 @@
 
 <style>
   .banner-custom {
+
+    background-image: url({{ section.settings.background_image | image_url }});
     width: 100%;
     height: 100vh;
     min-height: 700px;
