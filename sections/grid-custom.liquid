@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function() {
       popupPrice.textContent = (productData.price / 100).toFixed(2);
 
       // Description (safe version)
-      popupDescription.textContent = productData.description;
+      popupDescription.innerHTML = productData.description;
 
       // Clear old variants
       variantContainer.innerHTML = "";
