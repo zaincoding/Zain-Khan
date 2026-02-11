@@ -189,45 +189,52 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const productData = JSON.parse(this.dataset.product);
 
-      // Inject Title
+      // Title
       popupTitle.textContent = productData.title;
 
-      // Inject Price
+      // Simple Price (no Shopify.formatMoney)
+      popupPrice.textContent = (productData.price / 100).toFixed(2);
 
-if (productData.options.length > 0 && productData.variants.length > 1) {
-  productData.options.forEach((option, index) => {
+      // Description (safe version)
+      popupDescription.textContent = productData.description;
 
-
-
-      // Inject Description
-      popupDescription.innerHTML = productData.description;
-
-      // Build Variant Selectors
+      // Clear old variants
       variantContainer.innerHTML = "";
 
-      productData.options.forEach((option, index) => {
+      // Only build selectors if real variants exist
+      if (productData.options.length > 0 && productData.variants.length > 1) {
 
-        const label = document.createElement("label");
-        label.textContent = option.name;
+        productData.options.forEach((option, index) => {
 
-        const select = document.createElement("select");
+          const label = document.createElement("label");
+          label.textContent = option.name;
 
-        productData.variants.forEach(variant => {
-          const optionValue = variant.options[index];
+          const select = document.createElement("select");
 
-          if (!select.querySelector(`option[value="${optionValue}"]`)) {
-            const opt = document.createElement("option");
-            opt.value = optionValue;
-            opt.textContent = optionValue;
-            select.appendChild(opt);
-          }
+          const usedValues = [];
+
+          productData.variants.forEach(variant => {
+            const value = variant.options[index];
+
+            if (!usedValues.includes(value)) {
+              usedValues.push(value);
+
+              const opt = document.createElement("option");
+              opt.value = value;
+              opt.textContent = value;
+              select.appendChild(opt);
+            }
+          });
+
+          variantContainer.appendChild(label);
+          variantContainer.appendChild(select);
+
         });
+      }
 
-        variantContainer.appendChild(label);
-        variantContainer.appendChild(select);
-      });
-
+      // Show popup
       popup.classList.remove("hidden");
+
     });
   });
 
@@ -242,8 +249,6 @@ if (productData.options.length > 0 && productData.variants.length > 1) {
   });
 
 });
-
-}
 </script>
 
 
