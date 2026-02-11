@@ -5,20 +5,34 @@
       {% assign product = block.settings.product %}
 
       {% if product != blank %}
+        
+
         <div class="grid-item">
 
-          <img 
-            src="{{ product.featured_image | image_url: width: 600 }}" 
-            alt="{{ product.title | escape }}" 
-            width="400" 
-            height="320" 
-            class="grid-image">
+  <div class="image-wrapper">
+    <img 
+      src="{{ product.featured_image | image_url: width: 600 }}" 
+      alt="{{ product.title | escape }}" 
+      width="400" 
+      height="320" 
+      class="grid-image">
 
-          <h3 class="grid-title">
-            {{ product.title }}
-          </h3>
+    <button 
+      type="button" 
+      class="plus-btn"
+      data-product-id="{{ product.id }}">
+      +
+    </button>
+  </div>
 
-        </div>
+  <h3 class="grid-title">
+    {{ product.title }}
+  </h3>
+
+</div>
+
+
+
       {% endif %}
 
     {% endfor %}
@@ -54,6 +68,31 @@
     font-size: 18px;
     font-weight: 600;
   }
+
+
+  /* + Button CSS*/
+
+  .image-wrapper {
+  position: relative;
+}
+
+.plus-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
   /* Tablet */
   @media (max-width: 1024px) {
