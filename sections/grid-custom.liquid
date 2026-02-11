@@ -67,36 +67,42 @@
 
     <div class="popup-inner">
 
-      
-      
-<div class="popup-right">
+      <!-- LEFT SIDE -->
+      <div class="popup-left">
+        <img 
+          id="popup-image"
+          src="{{ product.featured_image | image_url: width: 600 }}"
+          alt="Product Image"
+          width="600"
+          height="600"
+          class="popup-product-image">
+      </div>
 
-  <!-- TOP SECTION -->
-  <div class="popup-info-top">
-    <h2 id="popup-title" class="popup-title"></h2>
-    <p id="popup-price" class="popup-price"></p>
-    <div id="popup-description" class="popup-description"></div>
-  </div>
+      <!-- RIGHT SIDE -->
+      <div class="popup-right">
 
-  <!-- BOTTOM SECTION -->
-  <div class="popup-info-bottom">
-    <div id="variant-selectors" class="popup-variants"></div>
+        <!-- TOP SECTION -->
+        <div class="popup-top">
+          <h2 id="popup-title" class="popup-title"></h2>
+          <p id="popup-price" class="popup-price"></p>
+          <div id="popup-description" class="popup-description"></div>
+        </div>
 
-    <button class="popup-add-to-cart">
-      ADD TO CART →
-    </button>
-  </div>
+        <!-- BOTTOM SECTION -->
+        <div class="popup-bottom">
+          <div id="variant-selectors" class="popup-variants"></div>
 
-</div>
+          <button class="popup-add-to-cart">
+            ADD TO CART →
+          </button>
+        </div>
 
-
-
-
-
+      </div>
 
     </div>
   </div>
 </div>
+
 
 
 
@@ -154,32 +160,64 @@
 
 
 
+
+/* Overlay */
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* Card */
 .popup-card {
   position: relative;
   background: #fff;
-  width: 850px;
+  width: 900px;
   max-width: 95%;
-  padding: 40px;
+  padding: 50px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   z-index: 2;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.15);
 }
 
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Layout */
 .popup-inner {
   display: flex;
-  gap: 50px;
-  align-items: flex-start; /* Important */
+  gap: 60px;
+  align-items: flex-start;
 }
 
-/* IMAGE SIDE */
+/* LEFT SIDE */
 .popup-left {
   flex: 1;
-  display: flex;
-  align-items: flex-start;
 }
 
 .popup-product-image {
   width: 100%;
-  max-height: 420px;   /* prevents image from being too tall */
+  max-height: 500px;   /* Controls image size */
   object-fit: cover;
   border-radius: 4px;
 }
@@ -189,13 +227,13 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Push bottom section down */
-  min-height: 420px; /* Same as image height */
+  justify-content: space-between;
+  min-height: 500px;  /* Match image height */
 }
 
-/* TOP INFO */
-.popup-info-top {
-  margin-bottom: 20px;
+/* TOP CONTENT */
+.popup-top {
+  max-width: 90%;
 }
 
 .popup-title {
@@ -207,17 +245,17 @@
 .popup-price {
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .popup-description {
   font-size: 14px;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* BOTTOM INFO */
-.popup-info-bottom {
+/* BOTTOM CONTENT */
+.popup-bottom {
   margin-top: auto;
 }
 
@@ -225,7 +263,7 @@
 .popup-variants label {
   font-size: 13px;
   display: block;
-  margin-top: 18px;
+  margin-top: 20px;
   margin-bottom: 6px;
 }
 
@@ -234,13 +272,14 @@
   padding: 12px;
   border: 1px solid #ddd;
   background: #fff;
+  font-size: 14px;
 }
 
 /* Button */
 .popup-add-to-cart {
-  margin-top: 25px;
-  padding: 15px;
+  margin-top: 30px;
   width: 100%;
+  padding: 16px;
   background: #000;
   color: #fff;
   border: none;
@@ -253,6 +292,27 @@
 .popup-add-to-cart:hover {
   background: #333;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .popup-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .popup-right {
+    min-height: auto;
+  }
+
+  .popup-product-image {
+    max-height: 350px;
+  }
+}
+
+
+
+
+
 
 
 
