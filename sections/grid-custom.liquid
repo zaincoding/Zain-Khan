@@ -198,6 +198,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const popupPrice = document.getElementById("popup-price");
   const popupDescription = document.getElementById("popup-description");
   const variantContainer = document.getElementById("variant-selectors");
+  const popupImage = document.getElementById("popup-image");
+
 
   plusButtons.forEach(button => {
     button.addEventListener("click", function() {
@@ -246,7 +248,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         });
       }
-const popupImage = document.getElementById("popup-image");
 
 // Inject image
 popupImage.src = productData.featured_image
@@ -255,6 +256,7 @@ popupImage.src = productData.featured_image
 popupImage.alt = productData.title;
 
       // Show popup
+      popup.classList.remove("hidden");
 
     });
   });
