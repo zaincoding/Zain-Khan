@@ -173,76 +173,28 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {
+    const plusButtons = document.querySelectorAll(".plus-btn");
+    const popup = document.getElementById("product-popup");
+    const closeBtn = document.getElementById("close-popup");
 
-  const plusButtons = document.querySelectorAll(".plus-btn");
-  const popup = document.getElementById("product-popup");
-  const closeBtn = document.getElementById("close-popup");
-
-  const popupTitle = document.getElementById("popup-title");
-  const popupPrice = document.getElementById("popup-price");
-  const popupDescription = document.getElementById("popup-description");
-  const variantContainer = document.getElementById("variant-selectors");
-
-  plusButtons.forEach(button => {
-    button.addEventListener("click", function() {
-
-      const productData = JSON.parse(this.dataset.product);
-
-      // Inject Title
-      popupTitle.textContent = productData.title;
-
-      // Inject Price
-      popupPrice.textContent = Shopify.formatMoney(
-        productData.price,
-        "{{ shop.money_format }}"
-      );
-
-      // Inject Description
-      popupDescription.innerHTML = productData.description;
-
-      // Build Variant Selectors
-      variantContainer.innerHTML = "";
-
-      productData.options.forEach((option, index) => {
-
-        const label = document.createElement("label");
-        label.textContent = option.name;
-
-        const select = document.createElement("select");
-
-        productData.variants.forEach(variant => {
-          const optionValue = variant.options[index];
-
-          if (!select.querySelector(`option[value="${optionValue}"]`)) {
-            const opt = document.createElement("option");
-            opt.value = optionValue;
-            opt.textContent = optionValue;
-            select.appendChild(opt);
-          }
-        });
-
-        variantContainer.appendChild(label);
-        variantContainer.appendChild(select);
+    plusButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        popup.classList.remove("hidden");
       });
+    });
 
-      popup.classList.remove("hidden");
+    closeBtn.addEventListener("click", function() {
+      popup.classList.add("hidden");
+    });
+
+    popup.addEventListener("click", function(e) {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
     });
   });
-
-  closeBtn.addEventListener("click", function() {
-    popup.classList.add("hidden");
-  });
-
-  popup.addEventListener("click", function(e) {
-    if (e.target === popup) {
-      popup.classList.add("hidden");
-    }
-  });
-
-});
 </script>
-
 
 
 
