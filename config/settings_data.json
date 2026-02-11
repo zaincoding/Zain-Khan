@@ -96,6 +96,7 @@
           "grid_block_FizJnn": {
             "type": "grid_block",
             "settings": {
+              "image": "shopify://shop_images/Untitled-2_1.png",
               "title": "Gift Box"
             }
           },
