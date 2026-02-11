@@ -96,37 +96,43 @@
           "grid_block_FizJnn": {
             "type": "grid_block",
             "settings": {
-              "product": "black-leather-bag"
+              "product": "black-leather-bag",
+              "button_symbol": "++"
             }
           },
           "grid_block_mbFxcf": {
             "type": "grid_block",
             "settings": {
-              "product": "blue-silk-tuxedo"
+              "product": "blue-silk-tuxedo",
+              "button_symbol": "+"
             }
           },
           "grid_block_9KXFJK": {
             "type": "grid_block",
             "settings": {
-              "product": "chequered-red-shirt"
+              "product": "chequered-red-shirt",
+              "button_symbol": "+"
             }
           },
           "grid_block_NBD7f8": {
             "type": "grid_block",
             "settings": {
-              "product": "classic-leather-jacket"
+              "product": "classic-leather-jacket",
+              "button_symbol": "+"
             }
           },
           "grid_block_AxqEJK": {
             "type": "grid_block",
             "settings": {
-              "product": "classic-varsity-top"
+              "product": "classic-varsity-top",
+              "button_symbol": "+"
             }
           },
           "grid_block_drrVLa": {
             "type": "grid_block",
             "settings": {
-              "product": "dark-denim-top"
+              "product": "dark-denim-top",
+              "button_symbol": "+"
             }
           }
         },
