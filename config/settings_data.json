@@ -137,9 +137,9 @@
             "type": "grid_block",
             "settings": {
               "product": "classic-varsity-top",
-              "button_top": 0,
+              "button_top": 55,
               "button_bottom": 0,
-              "button_left": 15,
+              "button_left": 190,
               "button_right": 15
             }
           },
