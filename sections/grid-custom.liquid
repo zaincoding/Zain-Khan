@@ -56,7 +56,59 @@
   </div>
 </section>
 
-<!-- GLOBAL POPUP (ONLY ONE) -->
+
+
+<!-- GLOBAL POPUP -->
+<div id="product-popup" class="popup hidden">
+  <div class="popup-overlay"></div>
+
+  <div class="popup-card">
+    <button id="close-popup" class="popup-close">×</button>
+
+    <div class="popup-inner">
+
+      <!-- Left: Product Image -->
+      <div class="popup-left">
+        <img 
+          id="popup-image"
+          src="{{ product.featured_image | image_url: width: 600 }}"
+          alt="Product Image"
+          width="600"
+          height="400"
+          class="popup-product-image">
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="popup-right">
+
+        <h2 id="popup-title" class="popup-title"></h2>
+
+        <p id="popup-price" class="popup-price"></p>
+
+        <div id="popup-description" class="popup-description"></div>
+
+        <div id="variant-selectors" class="popup-variants"></div>
+
+        <button class="popup-add-to-cart">
+          ADD TO CART →
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!-- GLOBAL POPUP (ONLY ONE) -->
 <div id="product-popup" class="popup hidden">
   <div class="popup-content">
     <button id="close-popup" class="close-btn">×</button>
@@ -75,7 +127,7 @@
       <!-- Content will come in Phase 7 -->
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 
 <style>
