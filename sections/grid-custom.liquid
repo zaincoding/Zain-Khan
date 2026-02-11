@@ -68,7 +68,7 @@
     <div class="popup-inner">
 
       <!-- Left: Product Image -->
-      <div class="popup-left">
+      {% comment %} <div class="popup-left">
         <img 
           id="popup-image"
           src="{{ product.featured_image | image_url: width: 600 }}"
@@ -76,10 +76,18 @@
           width="600"
           height="400"
           class="popup-product-image">
-      </div>
+      </div> {% endcomment %}
 
       <!-- Right: Product Info -->
       <div class="popup-right">
+
+        <img 
+          id="popup-image"
+          src="{{ product.featured_image | image_url: width: 600 }}"
+          alt="Product Image"
+          width="600"
+          height="400"
+          class="popup-product-image">
 
         <h2 id="popup-title" class="popup-title"></h2>
 
