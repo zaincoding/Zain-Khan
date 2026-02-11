@@ -63,7 +63,8 @@
     <div class="popup-body">
 
 
-     <img id="popup-image" src="" alt="Product Image" width="600" height="400" 
+     <img id="popup-image" src="{{ product.featured_image | image_url: width: 600 }}" 
+ alt="Product Image" width="600" height="400" 
            style="width:100%; max-height:300px; object-fit:cover; margin-bottom:15px;">
 
             <h2 id="popup-title"></h2>
