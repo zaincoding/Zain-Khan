@@ -21,7 +21,14 @@
 <button 
   type="button" 
   class="plus-btn"
-  data-product='{{ product | json | escape }}'
+  data-product='{
+    "title": "{{ product.title | escape }}",
+    "price": {{ product.price | divided_by: 100 }},
+    "description": "{{ product.description | strip_newlines | escape }}",
+    "variants": {{ product.variants | json }},
+    "options": {{ product.options | json }},
+    "image": "{{ product.featured_image | image_url: width: 600 }}"
+  }'
   style="
     {% if block.settings.button_top != 0 %} top: {{ block.settings.button_top }}px; {% endif %}
     {% if block.settings.button_bottom != 0 %} bottom: {{ block.settings.button_bottom }}px; {% endif %}
