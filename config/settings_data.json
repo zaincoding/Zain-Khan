@@ -107,10 +107,10 @@
             "type": "grid_block",
             "settings": {
               "product": "blue-silk-tuxedo",
-              "button_top": 0,
-              "button_bottom": 0,
-              "button_left": 15,
-              "button_right": 15
+              "button_top": 150,
+              "button_bottom": 15,
+              "button_left": 305,
+              "button_right": 0
             }
           },
           "grid_block_9KXFJK": {
