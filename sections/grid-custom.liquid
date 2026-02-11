@@ -203,14 +203,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-       // Image
+// Set popup image
+      popupImage.src = productData.image;      // <-- sets image
+      popupImage.alt = productData.title;      // <-- sets alt
+
+
+
+       {% comment %} // Image
     if (productData.featured_image) {
       popupImage.src = productData.featured_image.src; // Shopify product JSON has featured_image.src
       popupImage.alt = productData.title;
     } else {
       popupImage.src = ''; // fallback if no image
       popupImage.alt = 'No image';
-    }
+    } {% endcomment %}
 
       // Title
       popupTitle.textContent = productData.title;
