@@ -113,12 +113,36 @@
               "image": "shopify://shop_images/Untitled-2_3.png",
               "title": "Flannel Shirt"
             }
+          },
+          "grid_block_NBD7f8": {
+            "type": "grid_block",
+            "settings": {
+              "image": "shopify://shop_images/Untitled-2_4.png",
+              "title": "Gift Box"
+            }
+          },
+          "grid_block_AxqEJK": {
+            "type": "grid_block",
+            "settings": {
+              "image": "shopify://shop_images/Untitled-2_5.png",
+              "title": "Gift Box"
+            }
+          },
+          "grid_block_drrVLa": {
+            "type": "grid_block",
+            "settings": {
+              "image": "shopify://shop_images/Untitled-2_6.png",
+              "title": "Gift Box"
+            }
           }
         },
         "block_order": [
           "grid_block_FizJnn",
           "grid_block_mbFxcf",
-          "grid_block_9KXFJK"
+          "grid_block_9KXFJK",
+          "grid_block_NBD7f8",
+          "grid_block_AxqEJK",
+          "grid_block_drrVLa"
         ],
         "settings": {}
       }
