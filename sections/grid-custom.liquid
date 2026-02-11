@@ -173,6 +173,81 @@
 
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const plusButtons = document.querySelectorAll(".plus-btn");
+  const popup = document.getElementById("product-popup");
+  const closeBtn = document.getElementById("close-popup");
+
+  const popupTitle = document.getElementById("popup-title");
+  const popupPrice = document.getElementById("popup-price");
+  const popupDescription = document.getElementById("popup-description");
+  const variantContainer = document.getElementById("variant-selectors");
+
+  plusButtons.forEach(button => {
+    button.addEventListener("click", function() {
+
+      const productData = JSON.parse(this.dataset.product);
+
+      // Inject Title
+      popupTitle.textContent = productData.title;
+
+      // Inject Price
+
+if (productData.options.length > 0 && productData.variants.length > 1) {
+  productData.options.forEach((option, index) => {
+
+
+
+      // Inject Description
+      popupDescription.innerHTML = productData.description;
+
+      // Build Variant Selectors
+      variantContainer.innerHTML = "";
+
+      productData.options.forEach((option, index) => {
+
+        const label = document.createElement("label");
+        label.textContent = option.name;
+
+        const select = document.createElement("select");
+
+        productData.variants.forEach(variant => {
+          const optionValue = variant.options[index];
+
+          if (!select.querySelector(`option[value="${optionValue}"]`)) {
+            const opt = document.createElement("option");
+            opt.value = optionValue;
+            opt.textContent = optionValue;
+            select.appendChild(opt);
+          }
+        });
+
+        variantContainer.appendChild(label);
+        variantContainer.appendChild(select);
+      });
+
+      popup.classList.remove("hidden");
+    });
+  });
+
+  closeBtn.addEventListener("click", function() {
+    popup.classList.add("hidden");
+  });
+
+  popup.addEventListener("click", function(e) {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+    }
+  });
+
+});
+
+}
+</script>
+
+
+{% comment %} <script>
   document.addEventListener("DOMContentLoaded", function() {
     const plusButtons = document.querySelectorAll(".plus-btn");
     const popup = document.getElementById("product-popup");
@@ -194,7 +269,7 @@
       }
     });
   });
-</script>
+</script> {% endcomment %}
 
 
 
