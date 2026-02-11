@@ -182,7 +182,125 @@
 }
 
 
-/*Pop Up */
+
+
+/* Overlay */
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Card */
+.popup-card {
+  position: relative;
+  background: #fff;
+  width: 800px;
+  max-width: 95%;
+  padding: 40px;
+  z-index: 2;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Layout */
+.popup-inner {
+  display: flex;
+  gap: 40px;
+}
+
+.popup-left {
+  flex: 1;
+}
+
+.popup-product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.popup-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+.popup-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.popup-price {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.popup-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Variants */
+.popup-variants label {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.popup-variants select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Add to cart */
+.popup-add-to-cart {
+  margin-top: 25px;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.popup-add-to-cart:hover {
+  background: #333;
+}
+
+
+
+
+{% comment %} /*Pop Up */
 .popup {
   position: fixed;
   inset: 0;
@@ -214,7 +332,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-}
+} {% endcomment %}
 
 
 
