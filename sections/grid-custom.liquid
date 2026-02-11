@@ -17,7 +17,22 @@
       height="320" 
       class="grid-image">
 
-    <button 
+
+<button 
+  type="button" 
+  class="plus-btn"
+  data-product='{{ product | json | escape }}'
+  style="
+    {% if block.settings.button_top != 0 %} top: {{ block.settings.button_top }}px; {% endif %}
+    {% if block.settings.button_bottom != 0 %} bottom: {{ block.settings.button_bottom }}px; {% endif %}
+    left: {{ block.settings.button_left }}px;
+    right: {{ block.settings.button_right }}px;
+  ">
+  +
+</button>
+
+
+    {% comment %} <button 
       type="button" 
       class="plus-btn"
       data-product='{{ product | json | escape }}'
@@ -30,7 +45,7 @@
     
     ">
       +
-    </button>
+    </button> {% endcomment %}
   </div>
 
 
