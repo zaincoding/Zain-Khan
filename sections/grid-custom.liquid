@@ -113,25 +113,60 @@
 {
   "name": "Custom Grid",
   "settings": [],
-  "blocks": [
-    {
-      "type": "grid_block",
-      "name": "Grid Product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Select Product"
-        },
-         {
-      "type": "text",
-      "id": "button_symbol",
-      "label": "Button Symbol",
-      "default": "+"
-    }
-      ]
-    }
-  ],
+"blocks": [
+  {
+    "type": "grid_block",
+    "name": "Grid Product",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Select Product"
+      },
+      {
+        "type": "range",
+        "id": "button_top",
+        "label": "Button Top",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "button_bottom",
+        "label": "Button Bottom",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "unit": "px",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "button_left",
+        "label": "Button Left",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "unit": "px",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "button_right",
+        "label": "Button Right",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "unit": "px",
+        "default": 15
+      }
+    ]
+  }
+]
+,
   "presets": [
     {
       "name": "Custom Grid",
