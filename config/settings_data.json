@@ -127,9 +127,9 @@
             "type": "grid_block",
             "settings": {
               "product": "classic-leather-jacket",
-              "button_top": 0,
+              "button_top": 50,
               "button_bottom": 0,
-              "button_left": 15,
+              "button_left": 260,
               "button_right": 15
             }
           },
