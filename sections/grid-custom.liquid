@@ -20,6 +20,7 @@
     <button 
       type="button" 
       class="plus-btn"
+      data-product='{{ product | json | escape }}'
       data-product-id="{{ product.id }}"
       style="
     {% if block.settings.button_top != 0 %} top: {{ block.settings.button_top }}px; {% endif %}
