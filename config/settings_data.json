@@ -92,6 +92,31 @@
       },
       "grid-custom": {
         "type": "grid-custom",
+        "blocks": {
+          "grid_block_FizJnn": {
+            "type": "grid_block",
+            "settings": {
+              "title": "Gift Box"
+            }
+          },
+          "grid_block_mbFxcf": {
+            "type": "grid_block",
+            "settings": {
+              "title": "Gift Box"
+            }
+          },
+          "grid_block_9KXFJK": {
+            "type": "grid_block",
+            "settings": {
+              "title": "Gift Box"
+            }
+          }
+        },
+        "block_order": [
+          "grid_block_FizJnn",
+          "grid_block_mbFxcf",
+          "grid_block_9KXFJK"
+        ],
         "settings": {}
       }
     },

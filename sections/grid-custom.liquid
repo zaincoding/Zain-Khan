@@ -1,35 +1,104 @@
 <section class="grid-custom">
   <div class="grid-wrapper">
 
-    <div class="grid-item">
-      <div class="grid-image"></div>
-      <h3 class="grid-title">Gift Box One</h3>
-    </div>
-
-    <div class="grid-item">
-      <div class="grid-image"></div>
-      <h3 class="grid-title">Gift Box Two</h3>
-    </div>
-
-    <div class="grid-item">
-      <div class="grid-image"></div>
-      <h3 class="grid-title">Gift Box Three</h3>
-    </div>
-
-    <div class="grid-item">
-      <div class="grid-image"></div>
-      <h3 class="grid-title">Gift Box Four</h3>
-    </div>
-
-    <div class="grid-item">
-      <div class="grid-image"></div>
-      <h3 class="grid-title">Gift Box Five</h3>
-    </div>
-
-    <div class="grid-item">
-      <div class="grid-image"></div>
-      <h3 class="grid-title">Gift Box Six</h3>
-    </div>
+    {% for block in section.blocks %}
+      <div class="grid-item">
+        {% if block.settings.image %}
+          <img 
+            src="{{ block.settings.image | image_url }}" 
+            alt="{{ block.settings.title | escape }}" 
+            width="400" 
+            height="320" 
+            class="grid-image">
+        {% else %}
+          <div class="grid-image"></div>
+        {% endif %}
+        <h3 class="grid-title">{{ block.settings.title }}</h3>
+      </div>
+    {% endfor %}
 
   </div>
 </section>
+
+<style>
+  .grid-custom {
+    padding: 80px 60px;
+  }
+
+  .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .grid-item {
+    text-align: center;
+  }
+
+  .grid-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #f2f2f2; /* fallback if no image selected */
+  }
+
+  .grid-title {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .grid-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .grid-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Custom Grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "grid_block",
+      "name": "Grid Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Block Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Block Title",
+          "default": "Gift Box"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Grid",
+      "blocks": [
+        {"type": "grid_block"},
+        {"type": "grid_block"},
+        {"type": "grid_block"},
+        {"type": "grid_block"},
+        {"type": "grid_block"},
+        {"type": "grid_block"}
+      ]
+    }
+  ]
+}
+{% endschema %}
