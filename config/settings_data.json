@@ -96,43 +96,37 @@
           "grid_block_FizJnn": {
             "type": "grid_block",
             "settings": {
-              "image": "shopify://shop_images/Untitled-2_1.png",
-              "title": "College Bag"
+              "product": "black-leather-bag"
             }
           },
           "grid_block_mbFxcf": {
             "type": "grid_block",
             "settings": {
-              "image": "shopify://shop_images/Untitled-2_2.png",
-              "title": "Velvet Coat"
+              "product": ""
             }
           },
           "grid_block_9KXFJK": {
             "type": "grid_block",
             "settings": {
-              "image": "shopify://shop_images/Untitled-2_3.png",
-              "title": "Flannel Shirt"
+              "product": ""
             }
           },
           "grid_block_NBD7f8": {
             "type": "grid_block",
             "settings": {
-              "image": "shopify://shop_images/Untitled-2_4.png",
-              "title": "Gift Box"
+              "product": ""
             }
           },
           "grid_block_AxqEJK": {
             "type": "grid_block",
             "settings": {
-              "image": "shopify://shop_images/Untitled-2_5.png",
-              "title": "Gift Box"
+              "product": ""
             }
           },
           "grid_block_drrVLa": {
             "type": "grid_block",
             "settings": {
-              "image": "shopify://shop_images/Untitled-2_6.png",
-              "title": "Gift Box"
+              "product": ""
             }
           }
         },
