@@ -103,12 +103,14 @@
           "grid_block_mbFxcf": {
             "type": "grid_block",
             "settings": {
+              "image": "shopify://shop_images/Untitled-2_2.png",
               "title": "Gift Box"
             }
           },
           "grid_block_9KXFJK": {
             "type": "grid_block",
             "settings": {
+              "image": "shopify://shop_images/Untitled-2_3.png",
               "title": "Gift Box"
             }
           }
