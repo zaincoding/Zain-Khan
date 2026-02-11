@@ -160,6 +160,35 @@
   }
 </style>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const plusButtons = document.querySelectorAll(".plus-btn");
+    const popup = document.getElementById("product-popup");
+    const closeBtn = document.getElementById("close-popup");
+
+    plusButtons.forEach(button => {
+      button.addEventListener("click", function() {
+        popup.classList.remove("hidden");
+      });
+    });
+
+    closeBtn.addEventListener("click", function() {
+      popup.classList.add("hidden");
+    });
+
+    popup.addEventListener("click", function(e) {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+</script>
+
+
+
+
+
 {% schema %}
 {
   "name": "Custom Grid",
