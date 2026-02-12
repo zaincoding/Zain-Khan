@@ -315,16 +315,6 @@ document.addEventListener("DOMContentLoaded", function() {
       popupImage.alt = productData.title;      // <-- sets alt
 
 
-
-       {% comment %} // Image
-    if (productData.featured_image) {
-      popupImage.src = productData.featured_image.src; // Shopify product JSON has featured_image.src
-      popupImage.alt = productData.title;
-    } else {
-      popupImage.src = ''; // fallback if no image
-      popupImage.alt = 'No image';
-    } {% endcomment %}
-
       // Title
       popupTitle.textContent = productData.title;
 
@@ -335,43 +325,43 @@ document.addEventListener("DOMContentLoaded", function() {
       popupDescription.innerHTML = productData.description;
 
     //
-variantContainer.innerHTML = "";
 
-if (productData.options.length > 0 && productData.variants.length > 1) {
+      // Clear old variants
+      variantContainer.innerHTML = "";
 
-  productData.options.forEach((option, index) => {
+      // Only build selectors if real variants exist
+      if (productData.options.length > 0 && productData.variants.length > 1) {
 
-    // Create label
-    const label = document.createElement("label");
-    label.textContent = option.name;
-    label.setAttribute("for", `option-${index}`);
+        productData.options.forEach((option, index) => {
 
-    // Create select
-    const select = document.createElement("select");
-    select.id = `option-${index}`;
+          const label = document.createElement("label");
+          label.textContent = option;
 
-    const usedValues: string[] = [];
+          const select = document.createElement("select");
 
-    productData.variants.forEach(variant => {
-      const value = variant.options[index];
+         select.id = `option-${index}`;
+         label.setAttribute("for", `option-${index}`)
 
-      if (!usedValues.includes(value)) {
-        usedValues.push(value);
+          const usedValues = [];
 
-        const opt = document.createElement("option");
-        opt.value = value;
-        opt.textContent = value;
+          productData.variants.forEach(variant => {
+            const value = variant.options[index];
 
-        select.appendChild(opt);
+            if (!usedValues.includes(value)) {
+              usedValues.push(value);
+
+              const opt = document.createElement("option");
+              opt.value = value;
+              opt.textContent = value;
+              select.appendChild(opt);
+            }
+          });
+
+          variantContainer.appendChild(label);
+          variantContainer.appendChild(select);
+
+        });
       }
-    });
-
-    variantContainer.appendChild(label);
-    variantContainer.appendChild(select);
-
-  });
-}
-
 
       // Show popup
       popup.classList.remove("hidden");
