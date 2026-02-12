@@ -185,19 +185,24 @@
 }
 
 
+
+
 @media (max-width: 768px) {
 
-  /* Remove background image from main section */
+  /* Remove background image */
   .banner-custom {
     background-image: none;
     height: auto;
     min-height: auto;
     max-height: none;
     background-color: #ffffff;
-    justify-content: flex-start;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Hide everything except logo, heading, subtitle */
+  /* Hide unwanted elements */
   .banner-description,
   .banner-button,
   .banner-button-gift,
@@ -205,29 +210,39 @@
     display: none;
   }
 
-  /* Stack top items vertically */
+  /* Make both sections full width */
+  .banner-top,
+  .banner-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Stack everything */
   .banner-top {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 40px 20px 10px 20px;
     gap: 10px;
+    padding: 40px 20px 0 20px;
   }
 
-  /* Center heading below logo */
   .banner-content {
-    margin-top: 0;
     padding: 0 20px 30px 20px;
-    text-align: center;
-    max-width: 100%;
+  }
+
+  /* 🔥 ORDER FIX */
+  .banner-logo {
+    order: 1;
   }
 
   .banner-heading {
-    font-size: 26px;
-    margin-bottom: 10px;
+    order: 2;
   }
 
-  /* Add image below text */
+  .banner-subtitle {
+    order: 3;
+  }
+
+  /* Add image below */
   .banner-custom::after {
     content: "";
     display: block;
