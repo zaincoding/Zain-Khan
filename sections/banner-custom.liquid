@@ -60,7 +60,7 @@
 
   <div class="mobile-image">
 
-    <div class="mobile-button">
+    <div class="mobile-button-wrapper">
     <a href="#" class="mobile-button">
       {{ section.settings.mobile_button}}->
     </a>
@@ -224,19 +224,27 @@
     background-position: center;
   }
 
-    .mobile-button {
+.mobile-button-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
 
-    text-align:center;
-    display: inline-block;
-    padding: 10px 46px;
-    background-color:rgb(250, 234, 5);
-    color: #000000;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
+.mobile-button {
+  display: inline-block;
+  padding: 10px 46px;
+  background-color: rgb(250, 234, 5);
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 
     .mobile-button:hover {
     background-color: #000000;
