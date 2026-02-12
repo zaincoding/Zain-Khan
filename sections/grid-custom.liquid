@@ -1,3 +1,34 @@
+{%- comment -%}
+COMMIT NOTE / DESCRIPTION:
+
+1️⃣ Grid Layout:
+- This section (.grid-custom) displays products in a responsive grid.
+- Uses a for-loop over section.blocks to display 6 product blocks by default.
+- Each grid-item includes the product image and title.
+- Grid is designed to show 3 columns on desktop, 2 on tablet, and 1 on mobile.
+
+2️⃣ Plus Button:
+- Each product image contains a '+' button (.plus-btn).
+- Button position is controlled by block settings: button_top, button_bottom, button_left, button_right.
+- Allows precise control of the button’s margin and placement over each product image.
+- Clicking this button triggers the product popup.
+
+3️⃣ Product Popup:
+- The '+' button opens a popup displaying the product details.
+- Popup includes:
+    • Product image
+    • Title
+    • Price
+    • Description
+    • Variant selectors (size, color)
+    • Functional "Add to Cart" button
+- Popup dynamically loads the correct product data from the clicked button using data-product attribute.
+
+This code ensures a fully responsive product grid with interactive + buttons and a functional Shopify product popup.
+{%- endcomment -%}
+
+
+
 <section class="grid-custom">
   <div class="grid-wrapper">
 
