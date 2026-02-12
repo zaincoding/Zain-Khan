@@ -1,5 +1,8 @@
 <section class="banner-custom">
   <!-- TOP HORIZONTAL CONTENT -->
+
+  <div class="desktop-banner">
+
   <div class="banner-top">
     <div class="banner-logo">
       {{ section.settings.logo_text }}
@@ -34,7 +37,7 @@
   </p>
 
   </div>
-</section>
+</div>
 
 
 <!-- MOBILE VERSION -->
@@ -57,7 +60,7 @@
   <div class="mobile-image"></div>
 
 </div>
-
+</section>
 
 <style>
   .banner-custom {
@@ -76,6 +79,10 @@
     {% comment %} align-items: flex-start; {% endcomment %}
        justify-content: space-between; /* 🔥 key line */
 
+  }
+
+  .desktop-banner{
+  
   }
 
   /* TOP BAR */
