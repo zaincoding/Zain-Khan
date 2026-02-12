@@ -23,7 +23,7 @@
   class="plus-btn"
   data-product='{
     "title": "{{ product.title | escape }}",
-    "price": {{ product.price }},
+    "price": {{ product.price | money}},
     "description": "{{ product.description | strip_newlines | escape }}",
     "variants": {{ product.variants | json }},
     "options": {{ product.options | json }},
