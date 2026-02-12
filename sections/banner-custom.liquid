@@ -187,24 +187,25 @@
 
 @media (max-width: 768px) {
 
-  /* Remove background image behavior */
+  /* Remove background image from main section */
   .banner-custom {
     background-image: none;
     height: auto;
     min-height: auto;
     max-height: none;
-    justify-content: flex-start;
     background-color: #ffffff;
+    justify-content: flex-start;
   }
 
-  /* Hide buttons */
+  /* Hide everything except logo, heading, subtitle */
+  .banner-description,
   .banner-button,
   .banner-button-gift,
   .banner-bottom-text {
     display: none;
   }
 
-  /* Top content styling */
+  /* Stack top items vertically */
   .banner-top {
     flex-direction: column;
     align-items: center;
@@ -213,7 +214,7 @@
     gap: 10px;
   }
 
-  /* Banner content under logo */
+  /* Center heading below logo */
   .banner-content {
     margin-top: 0;
     padding: 0 20px 30px 20px;
@@ -226,11 +227,7 @@
     margin-bottom: 10px;
   }
 
-  .banner-description {
-    font-size: 14px;
-  }
-
-  /* Create image section below text */
+  /* Add image below text */
   .banner-custom::after {
     content: "";
     display: block;
