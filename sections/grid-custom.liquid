@@ -449,11 +449,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 const bonusVariantId = 43041632747638; // Soft Winter Jacket Black/Medium
-
-
-
-
-
 // Normalize values
 const normalizedColor = selectedColor.trim().toLowerCase();
 const normalizedSize = selectedSize.trim().toLowerCase();
@@ -475,15 +470,6 @@ if (normalizedColor === "black" && normalizedSize === "m") {
   alert(`${currentProductData.title} added to cart!`);
   popup.classList.add("hidden");
 }
-
-
-
-
-
-
-
-
-
     })
     .catch(err => console.error("Main product add failed:", err));
   });
