@@ -5,7 +5,7 @@ COMMIT NOTE / DESCRIPTION:
 - This section (.grid-custom) displays products in a responsive grid.
 - Uses a for-loop over section.blocks to display 6 product blocks by default.
 - Each grid-item includes the product image and title.
-- Grid is designed to show 3 columns on desktop, 2 on tablet, and 1 on mobile.
+- Grid is designed to show 3 columns on desktop, 2 on tablet.
 
 2️⃣ Plus Button:
 - Each product image contains a '+' button (.plus-btn).
@@ -346,14 +346,7 @@ This code ensures a fully responsive product grid with interactive + buttons and
   }
   }
 
-  
 
-  {% comment %} /* Mobile */
-  @media (max-width: 768px) {
-    .grid-wrapper {
-      grid-template-columns: 1fr;
-    }
-  } {% endcomment %}
 </style>
 
 
