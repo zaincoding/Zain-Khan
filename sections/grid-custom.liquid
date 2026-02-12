@@ -332,6 +332,47 @@ document.addEventListener("DOMContentLoaded", function() {
       variantContainer.innerHTML = "";
 
       // Only build selectors if real variants exist
+if (productData.options.length > 0 && productData.variants.length > 1) {
+
+  // 🔥 Sort so "Color" comes first
+  const sortedOptions = [...productData.options].sort((a, b) => {
+    if (a.toLowerCase() === "color") return -1;
+    if (b.toLowerCase() === "color") return 1;
+    return 0;
+  });
+
+  sortedOptions.forEach((option) => {
+
+    const index = productData.options.indexOf(option);
+
+    const label = document.createElement("label");
+    label.textContent = option;
+
+    const select = document.createElement("select");
+
+    select.id = `option-${index}`;
+    label.setAttribute("for", `option-${index}`);
+
+    const usedValues = [];
+
+    productData.variants.forEach(variant => {
+      const value = variant.options[index];
+
+      if (!usedValues.includes(value)) {
+        usedValues.push(value);
+
+        const opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = value;
+        select.appendChild(opt);
+      }
+    });
+
+    variantContainer.appendChild(label);
+    variantContainer.appendChild(select);
+
+  });
+}
 
 
       // Show popup
