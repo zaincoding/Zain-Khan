@@ -184,86 +184,49 @@
   }
 }
 
+
 @media (max-width: 768px) {
-  /* Mobile: stack top items, reduce spacing */
+
+  /* Make banner content start from top */
+  .banner-custom {
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  /* Hide buttons */
+  .banner-button,
+  .banner-button-gift,
+  .banner-bottom-text {
+    display: none;
+  }
+
+  /* Stack top section vertically and center */
   .banner-top {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 8px 20px;
-    gap: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px 10px 20px;
+    gap: 10px;
   }
 
-  .banner-logo {
-    font-size: 18px;
-  }
-
-  .banner-subtitle {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 13px;
-  }
-
+  /* Center banner content */
   .banner-content {
-    padding-left: 20px;
-    margin-top: 180px; /* push content appropriately */
+    margin-top: 0;
+    padding: 10px 20px;
     max-width: 100%;
+    text-align: center;
   }
 
   .banner-heading {
     font-size: 26px;
-    line-height: 1.2;
-    margin-left:auto;
+    margin-bottom: 10px;
   }
 
   .banner-description {
     font-size: 14px;
-    max-width: 400px;
-  }
-
-  .banner-button, .banner-button-gift {
-    padding: 6px 28px;
-    font-size: 12px;
-  }
-
-  .banner-bottom-text {
-    margin-top: 40px;
-    font-size: 12px;
-    margin-left: 0;
+    line-height: 1.5;
   }
 }
-
-{% comment %} @media (max-width: 480px) {
-  /* Small mobile: shrink everything more */
-  .banner-top {
-    padding: 8px 15px;
-  }
-
-  .banner-heading {
-    font-size: 20px;
-  }
-
-  .banner-description {
-    font-size: 13px;
-  }
-
-  .banner-button, .banner-button-gift {
-    padding: 5px 20px;
-    font-size: 11px;
-  }
-
-  .banner-content {
-    padding-left: 15px;
-    margin-top: 140px;
-  }
-
-  
-
-  .banner-bottom-text {
-    margin-top: 30px;
-    font-size: 11px;
-  }
-} {% endcomment %}
-
 
 
 
@@ -336,229 +299,4 @@
   ]
 }
 {% endschema %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% comment %} <section
-  class="banner-custom"
-  style="background-image: url({{ section.settings.background_image | image_url }});"
->
-  <!-- TOP HORIZONTAL CONTENT -->
-  <div class="banner-top">
-    <div class="banner-logo">
-      {{ section.settings.logo_text }}
-    </div>
-
-    <div class="banner-subtitle">
-      {{ section.settings.subtitle }}
-    </div>
-
-    <a href="#" class="banner-button">
-      {{ section.settings.choose_gift }} →
-    </a>
-  </div>
-
-  <!-- VERTICAL CONTENT -->
-  <div class="banner-content">
-    <h1 class="banner-heading">
-      {{ section.settings.heading }}
-    </h1>
-
-    <p class="banner-description">
-      {{ section.settings.description }}
-    </p>
-
-    <a href="#" class="banner-button banner-button-secondary">
-      {{ section.settings.button_text }} →
-    </a>
-
-      <!-- BOTTOM TEXT -->
-  <p class="banner-bottom-text">
-    {{ section.settings.bottom_text }}
-  </p>
-
-  </div>
-</section>
-
-<style>
-  .banner-custom {
-    width: 100%;
-    height: calc(100vh - var(--header-height, 0px));
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-
-    display: flex;
-    flex-direction: column;
-    {% comment %} align-items: flex-start; {% endcomment %}
-       justify-content: space-between; /* 🔥 key line */
-
-  }
-
-  /* TOP BAR */
-  .banner-top {
-    display: flex;
-    align-items: center;
-    gap: 350px;
-
-    padding: 40px 50px;
-    color: #000000;
-  }
-
-  .banner-logo {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0px;
-    white-space: nowrap;
-  }
-
-  .banner-subtitle {
-    font-size: 14px;
-    opacity: 0.9;
-    white-space: nowrap;
-  }
-
-  .btn{
-     padding: 20px 50px;
-  }
-
-  /* VERTICAL CONTENT */
-  .banner-content {
-    margin-top: 330px;
-    padding-left: 50px;
-     padding-bottom: 60px;
-    max-width: 600px;
-    color: #000000;
-  }
-
-  .banner-heading {
-    font-size: 62px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .banner-description {
-    font-size: 16px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
-
-  /* BUTTONS */
-  .banner-button {
-    display: inline-block;
-    padding: 10px 46px;
-    background-color:rgb(250, 234, 5);
-    color: #000000;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .banner-button:hover {
-    background-color: #000000;
-    color: #ffffff;
-  }
-
-  .banner-button-secondary {
-    margin-top: 10px;
-  }
-
-  .banner-bottom-text {
-  margin-top: 100px; /* between 400–500px as requested */
-  font-size: 14px;
-  font-weight: 600;
-  margin-left: 500px;
-  letter-spacing: 2px;
-  color: #000000;
-  white-space: nowrap;
-}
-
-</style>
-
-
-{% schema %}
-{
-  "name": "Custom Banner",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Background image"
-    },
-    {
-      "type": "text",
-      "id": "logo_text",
-      "label": "Logo text",
-      "default": "TISSO VISION"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Find the ideal gift for your loved ones"
-    },
-
-        {
-      "type": "text",
-      "id": "choose_gift",
-      "label": "Gift",
-      "default": "Choose Gift"
-    },
-
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Banner heading",
-      "default": "The Gift Guide"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Banner description",
-  "default": "Discover thoughtful gifts designed to celebrate every special moment. Carefully curated collections that blend style, quality, and meaning—perfect for surprising your loved ones and making memories that last."
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button text",
-      "default": "Choose Gift"
-    },
-
-    {
-  "type": "text",
-  "id": "bottom_text",
-  "label": "Bottom Text",
-  "default": "SUSTAINABLE, ETHICALLY MADE"
-}
-
-  ],
-  "presets": [
-    {
-      "name": "Custom Full Banner"
-    }
-  ]
-}
-{% endschema %} {% endcomment %}
 
