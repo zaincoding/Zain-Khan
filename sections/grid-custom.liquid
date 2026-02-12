@@ -446,24 +446,44 @@ document.addEventListener("DOMContentLoaded", function() {
       const selectedColor = selectedOptions[colorIndex];
       const selectedSize = selectedOptions[sizeIndex];
 
-      const bonusVariantId = 43041632747638; // replace with actual variant ID
 
-      if (selectedColor === "Black" && selectedSize === "Medium") {
-        // Add bonus product
-        fetch("/cart/add.js", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ items: [{ id: bonusVariantId, quantity: 1 }] })
-        })
-        .then(() => {
-          alert(`${currentProductData.title} AND Soft Winter Jacket added to cart!`);
-          popup.classList.add("hidden");
-        })
-        .catch(err => console.error("Bonus product failed:", err));
-      } else {
-        alert(`${currentProductData.title} added to cart!`);
-        popup.classList.add("hidden");
-      }
+
+const bonusVariantId = 43041632747638; // Soft Winter Jacket Black/Medium
+
+// Normalize values
+const normalizedColor = selectedColor.trim().toLowerCase();
+const normalizedSize = selectedSize.trim().toLowerCase();
+
+const bonusVariantColor = "black";
+const bonusVariantSize = "medium";
+
+// Only add bonus if it matches rule AND not same as main product
+if (
+  normalizedColor === bonusVariantColor &&
+  normalizedSize === bonusVariantSize &&
+  selectedVariant.id !== bonusVariantId
+) {
+  fetch("/cart/add.js", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ items: [{ id: bonusVariantId, quantity: 1 }] })
+  })
+  .then(() => {
+    alert(`${currentProductData.title} AND Soft Winter Jacket added to cart!`);
+    popup.classList.add("hidden");
+  })
+  .catch(err => console.error("Bonus product failed:", err));
+} else {
+  alert(`${currentProductData.title} added to cart!`);
+  popup.classList.add("hidden");
+}
+
+
+
+
+
+
+
     })
     .catch(err => console.error("Main product add failed:", err));
   });
