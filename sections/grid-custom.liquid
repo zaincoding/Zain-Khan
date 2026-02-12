@@ -345,7 +345,8 @@ document.addEventListener("DOMContentLoaded", function() {
       popupImage.src = productData.image;
       popupImage.alt = productData.title;
       popupTitle.textContent = productData.title;
-      popupPrice.textContent = (productData.price / 100).toFixed(2);
+      {% comment %} popupPrice.textContent = (productData.price / 100).toFixed(2); {% endcomment %}
+       popupPrice.innerText =  "$" + productData.price
       popupDescription.innerHTML = productData.description;
 
       // Clear old variants
