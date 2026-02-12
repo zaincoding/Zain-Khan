@@ -213,18 +213,22 @@
   display: none;
 }
 
+/* Hide mobile by default */
+.mobile-banner {
+  display: none;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
 
-  /* Hide desktop layout */
+  /* Hide desktop */
   .desktop-banner {
-    display: none;
+    display: none !important;
   }
 
-  /* Show mobile layout */
+  /* Show mobile */
   .mobile-banner {
-    display: block;
-    background-color: #ffffff;
+    display: block !important;
   }
 
   .mobile-text {
@@ -237,11 +241,11 @@
     margin: 10px 0;
   }
 
-  /* Image below text */
+  /* Mobile image below text */
   .mobile-image {
     width: 100%;
     height: 400px;
-    background-image: url({{ section.settings.background_image | image_url }});
+    background-image: url({{ section.settings.background_image | image_url }}); 
     background-size: cover;
     background-position: center;
   }
