@@ -89,8 +89,115 @@
 
 
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-card {
+    max-width: 90%;
+  }
+
+  .popup-inner {
+    flex-direction: column;
+  }
+}
 
 
+{
+  "type": "grid_block",
+  "name": "Grid Product",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    },
+
+    {
+      "type": "header",
+      "content": "Desktop Position"
+    },
+    {
+      "type": "range",
+      "id": "button_top",
+      "label": "Button Top",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_left",
+      "label": "Button Left",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "header",
+      "content": "Tablet Position"
+    },
+    {
+      "type": "range",
+      "id": "button_top_tablet",
+      "label": "Button Top (Tablet)",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_left_tablet",
+      "label": "Button Left (Tablet)",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile Position"
+    },
+    {
+      "type": "range",
+      "id": "button_top_mobile",
+      "label": "Button Top (Mobile)",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_left_mobile",
+      "label": "Button Left (Mobile)",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    }
+  ]
+}
 
 
 
