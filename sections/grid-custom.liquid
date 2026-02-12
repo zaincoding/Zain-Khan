@@ -461,43 +461,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Optionally update cart drawer here
     })
 
-.then(data => {
-
-  // 1️⃣ Get indexes for Color & Size
-  const colorIndex = currentProductData.options.findIndex(opt => opt.toLowerCase() === "color");
-  const sizeIndex = currentProductData.options.findIndex(opt => opt.toLowerCase() === "size");
-
-  const selectedColor = selectedOptions[colorIndex];
-  const selectedSize = selectedOptions[sizeIndex];
-
-  // 2️⃣ Set bonus product variant ID
-  const bonusVariantId = 1234567890; // <-- replace with actual Soft Winter Jacket variant ID
-
-  // 3️⃣ Check special rule
-  if (selectedColor === "Black" && selectedSize === "Medium") {
-    // Add bonus product
-    fetch("/cart/add.js", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: bonusVariantId, quantity: 1 }] })
-    })
-    .then(() => {
-      alert(`${currentProductData.title} AND Soft Winter Jacket have been added to your cart!`);
-      popup.classList.add("hidden");
-    })
-    .catch(err => console.error("Adding bonus product failed:", err));
-
-  } else {
-    // Normal case
-    alert(`${currentProductData.title} has been added to your cart!`);
-    popup.classList.add("hidden");
-  }
-
-})
-
-
-
-
+    
     .catch(err => console.error("Add to cart failed:", err));
   });
 
