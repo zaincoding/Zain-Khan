@@ -59,7 +59,7 @@
 
   <div class="mobile-image">
 
-    <a href="#" class="banner-button">
+    <a href="#" class="mobile-button">
       {{ section.settings.button_text }} →
     </a>
 
@@ -219,6 +219,23 @@
     background-image: url({{ section.settings.background_image | image_url }}); 
     background-size: cover;
     background-position: center;
+  }
+
+    .mobile-button {
+    display: inline-block;
+    padding: 10px 46px;
+    background-color:rgb(250, 234, 5);
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+    .mobile-button:hover {
+    background-color: #000000;
+    color: #ffffff;
   }
 
   /* Remove desktop background */
