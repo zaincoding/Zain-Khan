@@ -450,19 +450,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const bonusVariantId = 43041632747638; // Soft Winter Jacket Black/Medium
 
+
+
+
+
 // Normalize values
 const normalizedColor = selectedColor.trim().toLowerCase();
 const normalizedSize = selectedSize.trim().toLowerCase();
 
-const bonusVariantColor = "black";
-const bonusVariantSize = "medium";
-
-// Only add bonus if it matches rule AND not same as main product
-if (
-  normalizedColor === bonusVariantColor &&
-  normalizedSize === bonusVariantSize &&
-  selectedVariant.id !== bonusVariantId
-) {
+// Adjust to match Shopify variant exactly
+if (normalizedColor === "black" && normalizedSize === "m") {
+  // Add bonus product
   fetch("/cart/add.js", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -477,6 +475,8 @@ if (
   alert(`${currentProductData.title} added to cart!`);
   popup.classList.add("hidden");
 }
+
+
 
 
 
